@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinFormsApp1
@@ -17,34 +10,71 @@ namespace WinFormsApp1
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnSubmit_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (this.formIsValid())
+                {
+                    string customerName = tbCustomerName.Text;
+                    var dateOut = dtDateRented.Value;
+                    var dateIn = dtDateReturned.Value;
+                    var carType = cbTypeOfCar.Text;
+                    double cost = Convert.ToDouble(tbCost.Text);
 
+                    MessageBox.Show(
+                        $"Customer Name: {customerName}\n\r" +
+                        $"Date Rented: {dateOut.ToString()}\n\r" +
+                        $"Date Returned: {dateIn.ToString()}\n\r" +
+                        $"Car Type: {carType}\n\r" +
+                        $"Cost: {cost}\n\r" +
+                        $"THANK YOU FOR YOUR BUSINESS"
+                    );
+                }
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        public Boolean formIsValid()
         {
+            string customerName = tbCustomerName.Text;
+            var dateOut = dtDateRented.Value;
+            var dateIn = dtDateReturned.Value;
+            var carType = cbTypeOfCar.Text;
+           
 
-        }
+            Boolean isValid = true;
+            var errorMessage = "";
 
-        private void label2_Click(object sender, EventArgs e)
-        {
+            if (
+                string.IsNullOrWhiteSpace(customerName) ||
+                string.IsNullOrWhiteSpace(carType))
+            {
+                isValid = false;
+                errorMessage += "Please enter missing data.\n\r";
+            }
 
-        }
+            if (dateOut > dateIn)
+            {
+                isValid = false;
+                errorMessage += "Illegal Date Selection.\n\r";
+            }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
+            double number;
+            if (!double.TryParse(tbCost.Text,out number))
+            {
+                isValid = false;
+                errorMessage += "Illegal Cost Number.\n\r";
+            }
 
-        }
+            if (!isValid)
+            {
+                MessageBox.Show(errorMessage);
+            }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
+            return isValid;
         }
     }
 }
