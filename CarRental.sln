@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsApp1", "WinFormsApp1\WinFormsApp1.csproj", "{F17DB793-9B96-49A8-B77D-E5FA140E84F1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental", "CarRental\CarRental.csproj", "{E08FF8B2-A619-4A28-88FD-E65BDED6FC9F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F17DB793-9B96-49A8-B77D-E5FA140E84F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F17DB793-9B96-49A8-B77D-E5FA140E84F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F17DB793-9B96-49A8-B77D-E5FA140E84F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F17DB793-9B96-49A8-B77D-E5FA140E84F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E08FF8B2-A619-4A28-88FD-E65BDED6FC9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E08FF8B2-A619-4A28-88FD-E65BDED6FC9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E08FF8B2-A619-4A28-88FD-E65BDED6FC9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E08FF8B2-A619-4A28-88FD-E65BDED6FC9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {A78992D4-CA7E-442F-BE73-DDD0827C345C}
+		SolutionGuid = {B49F464C-D040-409C-A9A7-BC661DDF50EA}
 	EndGlobalSection
 EndGlobal

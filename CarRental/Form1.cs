@@ -76,5 +76,10 @@ namespace WinFormsApp1
 
             return isValid;
         }
+
+        private void cbTypeOfCar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

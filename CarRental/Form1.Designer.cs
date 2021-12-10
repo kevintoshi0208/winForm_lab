@@ -105,7 +105,7 @@ namespace WinFormsApp1
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(393, 274);
+            this.btnSubmit.Location = new System.Drawing.Point(465, 261);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(134, 47);
             this.btnSubmit.TabIndex = 9;
@@ -131,6 +131,7 @@ namespace WinFormsApp1
             this.cbTypeOfCar.Name = "cbTypeOfCar";
             this.cbTypeOfCar.Size = new System.Drawing.Size(249, 23);
             this.cbTypeOfCar.TabIndex = 11;
+            this.cbTypeOfCar.SelectedIndexChanged += new System.EventHandler(this.cbTypeOfCar_SelectedIndexChanged);
             // 
             // CostLabel
             // 
@@ -190,4 +191,3 @@ namespace WinFormsApp1
         private System.Windows.Forms.TextBox tbCost;
     }
 }
-
