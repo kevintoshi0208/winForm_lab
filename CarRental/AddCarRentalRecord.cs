@@ -4,10 +4,10 @@ using System.Windows.Forms;
 
 namespace CarRental
 {
-    public partial class Form1 : Form
+    public partial class AddCarRentalRecord : Form
     {
         private readonly CarRentalEntities carRentalEntities;
-        public Form1()
+        public AddCarRentalRecord()
         {
             InitializeComponent();
             carRentalEntities = new CarRentalEntities();
@@ -102,6 +102,14 @@ namespace CarRental
             cbTypeOfCar.DisplayMember = "Name";
             cbTypeOfCar.ValueMember = "id";
             cbTypeOfCar.DataSource = cars;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+
+            
         }
     }
 }
