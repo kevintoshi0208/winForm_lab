@@ -87,6 +87,7 @@ namespace CarRental
             this.viewListingToolStripMenuItem.Name = "viewListingToolStripMenuItem";
             this.viewListingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.viewListingToolStripMenuItem.Text = "View Listing";
+            this.viewListingToolStripMenuItem.Click += new System.EventHandler(this.viewListingToolStripMenuItem_Click);
             // 
             // manageRentalRecordsToolStripMenuItem
             // 

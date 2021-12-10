@@ -62,6 +62,12 @@
     <Compile Include="AddCarRentalRecord.Designer.cs">
       <DependentUpon>AddCarRentalRecord.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageVehicleListing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageVehicleListing.Designer.cs">
+      <DependentUpon>ManageVehicleListing.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageVehicleListing.resx">
+      <DependentUpon>ManageVehicleListing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
