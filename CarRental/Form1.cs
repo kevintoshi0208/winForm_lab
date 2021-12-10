@@ -19,11 +19,22 @@ namespace CarRental
             {
                 if (this.formIsValid())
                 {
+                   
                     string customerName = tbCustomerName.Text;
                     var dateOut = dtDateRented.Value;
                     var dateIn = dtDateReturned.Value;
                     var carType = cbTypeOfCar.Text;
                     double cost = Convert.ToDouble(tbCost.Text);
+
+                    var rentalRecord = new CarRentalRecord();
+                    rentalRecord.CustomerName = customerName;
+                    rentalRecord.DateRented = dateOut;
+                    rentalRecord.DateReturned = dateIn;
+                    rentalRecord.Cost = (decimal) cost;
+                    rentalRecord.TypeOfCarId = (int) cbTypeOfCar.SelectedValue;
+
+                    carRentalEntities.CarRentalRecord.Add(rentalRecord);
+                    carRentalEntities.SaveChanges();
 
                     MessageBox.Show(
                         $"Customer Name: {customerName}\n\r" +

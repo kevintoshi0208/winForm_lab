@@ -16,10 +16,10 @@ namespace CarRental
     {
         public int id { get; set; }
         public string CustomerName { get; set; }
-        public Nullable<System.DateTime> DataRented { get; set; }
         public Nullable<System.DateTime> DateReturned { get; set; }
         public Nullable<decimal> Cost { get; set; }
         public Nullable<int> TypeOfCarId { get; set; }
+        public Nullable<System.DateTime> DateRented { get; set; }
     
         public virtual TypesOfCars TypesOfCars { get; set; }
     }

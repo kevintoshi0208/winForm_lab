@@ -11,7 +11,7 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CustomerName" Type="nvarchar" MaxLength="100" />
-          <Property Name="DataRented" Type="datetime" />
+          <Property Name="DateRented" Type="datetime" />
           <Property Name="DateReturned" Type="datetime" />
           <Property Name="Cost" Type="decimal" Precision="18" Scale="0" />
           <Property Name="TypeOfCarId" Type="int" />
@@ -53,11 +53,11 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CustomerName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="DataRented" Type="DateTime" Precision="3" />
           <Property Name="DateReturned" Type="DateTime" Precision="3" />
           <Property Name="Cost" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="TypeOfCarId" Type="Int32" />
           <NavigationProperty Name="TypesOfCars" Relationship="CarRentalModel.FK_CarRentalRecord_TypesOfCars" FromRole="CarRentalRecord" ToRole="TypesOfCars" />
+          <Property Name="DateRented" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="TypesOfCars">
           <Key>
@@ -96,9 +96,9 @@
           <EntitySetMapping Name="CarRentalRecord">
             <EntityTypeMapping TypeName="CarRentalModel.CarRentalRecord">
               <MappingFragment StoreEntitySet="CarRentalRecord">
+                <ScalarProperty Name="DateRented" ColumnName="DateRented" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
-                <ScalarProperty Name="DataRented" ColumnName="DataRented" />
                 <ScalarProperty Name="DateReturned" ColumnName="DateReturned" />
                 <ScalarProperty Name="Cost" ColumnName="Cost" />
                 <ScalarProperty Name="TypeOfCarId" ColumnName="TypeOfCarId" />
