@@ -1,13 +1,16 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 
-namespace WinFormsApp1
+namespace CarRental
 {
     public partial class Form1 : Form
     {
+        private readonly CarRentalEntities carRentalEntities;
         public Form1()
         {
             InitializeComponent();
+            carRentalEntities = new CarRentalEntities();
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -80,6 +83,14 @@ namespace WinFormsApp1
         private void cbTypeOfCar_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            var cars = carRentalEntities.TypesOfCars.ToList();
+            cbTypeOfCar.DisplayMember = "Name";
+            cbTypeOfCar.ValueMember = "id";
+            cbTypeOfCar.DataSource = cars;
         }
     }
 }
