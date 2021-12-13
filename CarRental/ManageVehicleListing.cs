@@ -22,20 +22,7 @@ namespace CarRental
 
         private void ManageVehicleListing_Load(object sender, EventArgs e)
         {
-             var cars = _db.TypesOfCars
-                .Select(q=> new { 
-                    Make = q.Make ,
-                    Model = q.Model,
-                    VIN = q.VIN,
-                    Year = q.Year,
-                    LicensePlateNumber = q.LicensePlateNumber,
-                    Id = q.id
-                })
-                .ToList()
-            ;
-            gvVehicleList.DataSource = cars;
-            gvVehicleList.Columns[4].HeaderText = "License Plate Number";
-            gvVehicleList.Columns[5].Visible = false;
+            PopulateGrid();   
         }
 
         private void buttonAddCar_Click(object sender, EventArgs e)
@@ -59,17 +46,50 @@ namespace CarRental
 
         private void buttonDeleteCar_Click(object sender, EventArgs e)
         {
-            var id = (int)gvVehicleList.SelectedRows[0].Cells["Id"].Value;
+            try
+            {
+                var id = (int)gvVehicleList.SelectedRows[0].Cells["Id"].Value;
 
-            var car = _db.TypesOfCars.FirstOrDefault(q => q.id == id);
+                var car = _db.TypesOfCars.FirstOrDefault(q => q.id == id);
 
-            _db.TypesOfCars.Remove(car);
-            _db.SaveChanges();
+                _db.TypesOfCars.Remove(car);
+                _db.SaveChanges();
+
+                gvVehicleList.Refresh();
+            } 
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+       
         }
 
         private void gvVehicleList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            PopulateGrid();
+        }
+
+        public void PopulateGrid()
+        {
+            var cars = _db.TypesOfCars
+               .Select(q => new {
+                   Make = q.Make,
+                   Model = q.Model,
+                   VIN = q.VIN,
+                   Year = q.Year,
+                   LicensePlateNumber = q.LicensePlateNumber,
+                   Id = q.id
+               })
+               .ToList()
+           ;
+            gvVehicleList.DataSource = cars;
+            gvVehicleList.Columns[4].HeaderText = "License Plate Number";
+            gvVehicleList.Columns[5].Visible = false;
         }
     }
 }

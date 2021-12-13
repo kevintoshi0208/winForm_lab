@@ -34,16 +34,17 @@ namespace CarRental
             this.buttonAddCar = new System.Windows.Forms.Button();
             this.buttonEditCar = new System.Windows.Forms.Button();
             this.buttonDeleteCar = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvVehicleList)).BeginInit();
             this.SuspendLayout();
             // 
             // gvVehicleList
             // 
             this.gvVehicleList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvVehicleList.Location = new System.Drawing.Point(29, 91);
+            this.gvVehicleList.Location = new System.Drawing.Point(29, 124);
             this.gvVehicleList.Name = "gvVehicleList";
             this.gvVehicleList.RowTemplate.Height = 24;
-            this.gvVehicleList.Size = new System.Drawing.Size(611, 286);
+            this.gvVehicleList.Size = new System.Drawing.Size(611, 253);
             this.gvVehicleList.TabIndex = 0;
             this.gvVehicleList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvVehicleList_CellContentClick);
             // 
@@ -87,11 +88,22 @@ namespace CarRental
             this.buttonDeleteCar.UseVisualStyleBackColor = true;
             this.buttonDeleteCar.Click += new System.EventHandler(this.buttonDeleteCar_Click);
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(29, 81);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(84, 37);
+            this.btnRefresh.TabIndex = 5;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // ManageVehicleListing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(668, 465);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.buttonDeleteCar);
             this.Controls.Add(this.buttonEditCar);
             this.Controls.Add(this.buttonAddCar);
@@ -113,5 +125,6 @@ namespace CarRental
         private System.Windows.Forms.Button buttonAddCar;
         private System.Windows.Forms.Button buttonEditCar;
         private System.Windows.Forms.Button buttonDeleteCar;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

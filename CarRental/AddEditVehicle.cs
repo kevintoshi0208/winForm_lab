@@ -54,7 +54,6 @@ namespace CarRental
                 setUpCarAndSave(car);
                 _db.TypesOfCars.Add(car);
             }
-          
         }
 
         private void setUpCarAndSave(TypesOfCars car)
