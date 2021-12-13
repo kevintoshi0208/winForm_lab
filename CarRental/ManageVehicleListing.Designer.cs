@@ -40,17 +40,18 @@ namespace CarRental
             // gvVehicleList
             // 
             this.gvVehicleList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvVehicleList.Location = new System.Drawing.Point(27, 93);
+            this.gvVehicleList.Location = new System.Drawing.Point(29, 91);
             this.gvVehicleList.Name = "gvVehicleList";
             this.gvVehicleList.RowTemplate.Height = 24;
-            this.gvVehicleList.Size = new System.Drawing.Size(293, 270);
+            this.gvVehicleList.Size = new System.Drawing.Size(611, 286);
             this.gvVehicleList.TabIndex = 0;
+            this.gvVehicleList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvVehicleList_CellContentClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.label1.Location = new System.Drawing.Point(81, 29);
+            this.label1.Location = new System.Drawing.Point(125, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(432, 46);
             this.label1.TabIndex = 1;
@@ -58,7 +59,7 @@ namespace CarRental
             // 
             // buttonAddCar
             // 
-            this.buttonAddCar.Location = new System.Drawing.Point(486, 104);
+            this.buttonAddCar.Location = new System.Drawing.Point(29, 395);
             this.buttonAddCar.Name = "buttonAddCar";
             this.buttonAddCar.Size = new System.Drawing.Size(138, 42);
             this.buttonAddCar.TabIndex = 2;
@@ -68,7 +69,7 @@ namespace CarRental
             // 
             // buttonEditCar
             // 
-            this.buttonEditCar.Location = new System.Drawing.Point(486, 211);
+            this.buttonEditCar.Location = new System.Drawing.Point(189, 396);
             this.buttonEditCar.Name = "buttonEditCar";
             this.buttonEditCar.Size = new System.Drawing.Size(138, 41);
             this.buttonEditCar.TabIndex = 3;
@@ -78,9 +79,9 @@ namespace CarRental
             // 
             // buttonDeleteCar
             // 
-            this.buttonDeleteCar.Location = new System.Drawing.Point(486, 316);
+            this.buttonDeleteCar.Location = new System.Drawing.Point(345, 396);
             this.buttonDeleteCar.Name = "buttonDeleteCar";
-            this.buttonDeleteCar.Size = new System.Drawing.Size(138, 47);
+            this.buttonDeleteCar.Size = new System.Drawing.Size(138, 41);
             this.buttonDeleteCar.TabIndex = 4;
             this.buttonDeleteCar.Text = "Delete Car";
             this.buttonDeleteCar.UseVisualStyleBackColor = true;
@@ -90,7 +91,7 @@ namespace CarRental
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(668, 465);
             this.Controls.Add(this.buttonDeleteCar);
             this.Controls.Add(this.buttonEditCar);
             this.Controls.Add(this.buttonAddCar);

@@ -21,7 +21,11 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Make" Type="nvarchar" MaxLength="50" />
+          <Property Name="Model" Type="nvarchar" MaxLength="50" />
+          <Property Name="VIN" Type="nvarchar" MaxLength="50" />
+          <Property Name="LicensePlateNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Year" Type="int" />
         </EntityType>
         <Association Name="FK_CarRentalRecord_TypesOfCars">
           <End Role="TypesOfCars" Type="Self.TypesOfCars" Multiplicity="0..1" />
@@ -64,8 +68,12 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="CarRentalRecord" Relationship="CarRentalModel.FK_CarRentalRecord_TypesOfCars" FromRole="TypesOfCars" ToRole="CarRentalRecord" />
+          <Property Name="Make" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VIN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LicensePlateNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Year" Type="Int32" />
         </EntityType>
         <EntityContainer Name="CarRentalEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CarRentalRecord" EntityType="Self.CarRentalRecord" />
@@ -108,8 +116,12 @@
           <EntitySetMapping Name="TypesOfCars">
             <EntityTypeMapping TypeName="CarRentalModel.TypesOfCars">
               <MappingFragment StoreEntitySet="TypesOfCars">
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="LicensePlateNumber" ColumnName="LicensePlateNumber" />
+                <ScalarProperty Name="VIN" ColumnName="VIN" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Make" ColumnName="Make" />
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -91,16 +91,16 @@ namespace CarRental
             return isValid;
         }
 
-        private void cbTypeOfCar_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
-            var cars = carRentalEntities.TypesOfCars.ToList();
-            cbTypeOfCar.DisplayMember = "Name";
-            cbTypeOfCar.ValueMember = "id";
+            var cars = carRentalEntities
+                .TypesOfCars
+                .Select(q => new { Id = q.id, Name = q.Make + " " + q.Model })
+                .ToList();
+            ;
+
+            cbTypeOfCar.DisplayMember = "Make";
+            cbTypeOfCar.ValueMember = "Id";
             cbTypeOfCar.DataSource = cars;
         }
 
@@ -108,8 +108,6 @@ namespace CarRental
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
-
-            
         }
     }
 }

@@ -22,25 +22,52 @@ namespace CarRental
 
         private void ManageVehicleListing_Load(object sender, EventArgs e)
         {
-            gvVehicleList.DataSource = _db.TypesOfCars
-                .Select(q=> new { ID = q.id , Name = q.name })
+             var cars = _db.TypesOfCars
+                .Select(q=> new { 
+                    Make = q.Make ,
+                    Model = q.Model,
+                    VIN = q.VIN,
+                    Year = q.Year,
+                    LicensePlateNumber = q.LicensePlateNumber,
+                    Id = q.id
+                })
                 .ToList()
             ;
-            gvVehicleList.Columns[0].HeaderText = "ID";
-            gvVehicleList.Columns[1].HeaderText = "NAME";
+            gvVehicleList.DataSource = cars;
+            gvVehicleList.Columns[4].HeaderText = "License Plate Number";
+            gvVehicleList.Columns[5].Visible = false;
         }
 
         private void buttonAddCar_Click(object sender, EventArgs e)
         {
-
+            var addEditVehicle = new AddEditVehicle();
+            addEditVehicle.MdiParent = this.MdiParent;
+            addEditVehicle.Show();
         }
 
         private void buttonEditCar_Click(object sender, EventArgs e)
         {
 
+            var id = (int)gvVehicleList.SelectedRows[0].Cells["Id"].Value;
+
+            var car = _db.TypesOfCars.FirstOrDefault(q => q.id == id); 
+
+            var addEditVehicle = new AddEditVehicle(car);
+            addEditVehicle.MdiParent = this.MdiParent;
+            addEditVehicle.Show();
         }
 
         private void buttonDeleteCar_Click(object sender, EventArgs e)
+        {
+            var id = (int)gvVehicleList.SelectedRows[0].Cells["Id"].Value;
+
+            var car = _db.TypesOfCars.FirstOrDefault(q => q.id == id);
+
+            _db.TypesOfCars.Remove(car);
+            _db.SaveChanges();
+        }
+
+        private void gvVehicleList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

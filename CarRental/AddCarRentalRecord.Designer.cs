@@ -132,7 +132,6 @@ namespace CarRental
             this.cbTypeOfCar.Name = "cbTypeOfCar";
             this.cbTypeOfCar.Size = new System.Drawing.Size(214, 20);
             this.cbTypeOfCar.TabIndex = 11;
-            this.cbTypeOfCar.SelectedIndexChanged += new System.EventHandler(this.cbTypeOfCar_SelectedIndexChanged);
             // 
             // CostLabel
             // 
